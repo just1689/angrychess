@@ -11,6 +11,8 @@ func IsMovePossible(player *Player, piece *Piece, description *MoveDescription) 
 		return isMovePossibleRook(player, description)
 	} else if piece.Identity == identityBishop {
 		return isMovePossibleBishop(player, description)
+	} else if piece.Identity == identityQueen {
+		return isMovePossibleQueen(player, description)
 	}
 	ok = false
 	msg = "Identity not implemented. Cannot check isMovePossible"

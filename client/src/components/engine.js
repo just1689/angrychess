@@ -103,7 +103,7 @@ export class B {
                         fTile = tile
                     }
                     tile.scaling = new BABYLON.Vector3(1, 0.1, 1);
-                    if (board % 2 == 0) {
+                    if (board % 2 === 0) {
                         if ((x + y) % 2) {
                             tile.material = B.grayMat;
                         } else {
@@ -189,7 +189,7 @@ export class B {
 
     static getGroundPosition = () => {
         // Use a predicate to get position on the ground
-        let pickinfo = B.scene.pick(B.scene.pointerX, B.scene.pointerY, function (mesh) { return mesh == B.ground; });
+        let pickinfo = B.scene.pick(B.scene.pointerX, B.scene.pointerY, function (mesh) { return mesh === B.ground; });
         if (pickinfo.hit) {
             return pickinfo.pickedPoint;
         }
@@ -205,7 +205,7 @@ export class B {
         // check if we are under a mesh
         const pickInfo = B.scene.pick(B.scene.pointerX, B.scene.pointerY, function (mesh) { return mesh !== B.ground; });
         if (pickInfo.hit) {
-            if (pickInfo.pickedMesh.movable == false) {
+            if (pickInfo.pickedMesh.movable === false) {
                 return; ///////////////////////////////////////////////////
             }
             B.currentMesh = pickInfo.pickedMesh;
@@ -477,7 +477,7 @@ export class B {
     static findMeshByIdentity(identity) {
         if (B.pieceList) {
             for (let piece of B.pieceList) {
-                if (piece.metadata && piece.metadata.identity == identity) {
+                if (piece.metadata && piece.metadata.identity === identity) {
                     return piece;
                 }
             }

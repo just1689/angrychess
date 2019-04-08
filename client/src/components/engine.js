@@ -12,7 +12,7 @@ export class B {
     pieceList = []
     canvas = {}
     startingPoint = {}
-    currfentMesh = {}
+    currentMesh = {}
     labels = {}
 
     NetworkManager
